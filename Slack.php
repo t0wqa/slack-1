@@ -20,6 +20,12 @@ class Slack
         $this->client = new \GuzzleHttp\Client();
     }
 
+    /**
+     * @param $channelId
+     * @param $userId
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function inviteUserToChannel($channelId, $userId)
     {
         $result = $this->post('channels.invite', [
@@ -27,9 +33,14 @@ class Slack
            'user' => $userId
         ]);
 
-        print_r($result);
+        return $result;
     }
 
+    /**
+     * @param $email
+     * @return bool
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function findUserIdByEmail($email)
     {
         $result = $this->get('users.lookupByEmail', [
@@ -43,6 +54,12 @@ class Slack
         return $result['user']['id'];
     }
 
+    /**
+     * @param $apiMethod
+     * @param $queryParams
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     private function get($apiMethod, $queryParams)
     {
         $queryParams['token'] = self::TOKEN;
@@ -58,6 +75,12 @@ class Slack
         return json_decode($response->getBody()->getContents(), true);
     }
 
+    /**
+     * @param $apiMethod
+     * @param $requestParams
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     private function post($apiMethod, $requestParams)
     {
         $response = $this->client->request(
