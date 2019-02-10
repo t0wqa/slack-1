@@ -11,7 +11,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 class Slack
 {
 
-    const TOKEN = 'xoxp-546233192576-546364470913-548035990727-6941f20ec90dfdea8cae4becb731fc6b';
+    const TOKEN = 'YOUR_TOKEN';
 
     protected $client;
 
@@ -101,7 +101,7 @@ class Slack
 
 $slack = new Slack();
 
-$userId = $slack->findUserIdByEmail('anton.khomchenko.dev@gmail.com');
+$userId = $slack->findUserIdByEmail('email');
 
 if ($userId) {
     $slack->inviteUserToChannel(123, $userId);
