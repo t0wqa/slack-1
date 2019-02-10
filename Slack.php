@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: t0wqa
- * Date: 10.02.2019
- * Time: 10:19
+ * THIS IS ALMOST WORKING SCRIPT
+ * IN ORDER FOR THIS TO WORK COMPLETELY WRITE ME ON UPWORK
+ * AND I WILL LET YOU KNOW HOW TO USE IT
  */
 
 require_once __DIR__ . "/vendor/autoload.php";
