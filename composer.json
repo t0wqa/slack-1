@@ -1,0 +1,12 @@
+{
+    "name": "t0wqa/slack-api",
+    "authors": [
+        {
+            "name": "antonkh94",
+            "email": "antonkh94@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
